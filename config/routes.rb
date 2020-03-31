@@ -6,7 +6,6 @@ Rails.application.routes.draw do
     end
   end
 
-  get '/auth/github/callback', to: 'sessions#create'
 
   root 'welcome#index'
   get 'tags/:tag', to: 'welcome#index', as: :tag
@@ -30,10 +29,12 @@ Rails.application.routes.draw do
   post '/login', to: "sessions#create"
   delete '/logout', to: "sessions#destroy"
 
-  post '/login/oauth/authorize', to: 'oauth#create'
   get '/dashboard', to: 'users#show'
   get '/about', to: 'about#show'
   get '/get_started', to: 'get_started#show'
+  # post '/login/oauth/authorize', to: 'oauth#create'
+  get '/auth/github/callback', to: 'oauth#create'
+
 
   # Is this being used?
   get '/video', to: 'video#show'
