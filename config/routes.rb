@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     end
   end
 
+
   root 'welcome#index'
   get 'tags/:tag', to: 'welcome#index', as: :tag
   get '/register', to: 'users#new'
@@ -31,6 +32,9 @@ Rails.application.routes.draw do
   get '/dashboard', to: 'users#show'
   get '/about', to: 'about#show'
   get '/get_started', to: 'get_started#show'
+  # post '/login/oauth/authorize', to: 'oauth#create'
+  get '/auth/github/callback', to: 'oauth#create'
+
 
   # Is this being used?
   get '/video', to: 'video#show'

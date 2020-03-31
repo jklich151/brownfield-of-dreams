@@ -25,8 +25,9 @@ gem 'active_model_serializers'
 gem 'omniauth-google-oauth2'
 gem 'will_paginate'
 gem 'acts-as-taggable-on', '~> 6.0'
-gem 'omniauth-census', git: "https://github.com/turingschool-projects/omniauth-census"
 
+gem 'omniauth-census', git: "https://github.com/turingschool-projects/omniauth-census"
+gem 'omniauth-github', github: 'omniauth/omniauth-github', branch: 'master'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -40,7 +41,7 @@ group :development, :test do
   gem 'awesome_print'
   gem 'webmock'
   gem 'simplecov'
-  gem 'vcr'
+  # gem 'vcr'
   gem 'selenium-webdriver'
   gem 'webdrivers'
   gem 'rubocop', require: false

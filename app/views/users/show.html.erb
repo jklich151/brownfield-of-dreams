@@ -2,12 +2,19 @@
   <h1> <%= current_user.first_name %>'s Dashboard </h1>
 
   <%= button_to 'Log Out', logout_path, method: 'delete', class: "btn btn-primary mb1 bg-teal" %>
+  <%# <%= link_to 'Connect to Github', "https://github.com/login/oauth/authorize?client_id=3287bcfd72a2eb52c694&scope=repo", method: 'post' %> %>
   <h3>Account Details</h3>
   <ul>
     <li> <%= current_user.first_name  %> <%= current_user.last_name %> </li>
     <li> <%= current_user.email%> </li>
   </ul>
+  <h3>Github</h3>
+  <section class= "Github" >
+    <% @json.map do |repo| %>
+    <%= link_to repo[:name], repo[:html_url]  %>
+    <% end %>
+  </section>
   <section>
     <h1>Bookmarked Segments</h1>
   </section>
-</section>
+  </section>
