@@ -10,9 +10,22 @@
   </ul>
   <h3>Github</h3>
   <section class= "Github" >
+    <% require "pry"; binding.pry %>
     <% @json.map do |repo| %>
     <%= link_to repo[:name], repo[:html_url]  %>
     <% end %>
+    <h4>Following</h4>
+    <section class= "Following" >
+      <% @json_2.map do |repo| %>
+      <%= link_to repo[:login], repo[:html_url]  %>
+      <% end %>
+    </section>
+    <h4>Followers</h4>
+    <section class= "Followers" >
+      <% @json_3.map do |repo| %>
+      <%= link_to repo[:login], repo[:html_url]  %>
+      <% end %>
+    </section>
   </section>
   <section>
     <h1>Bookmarked Segments</h1>

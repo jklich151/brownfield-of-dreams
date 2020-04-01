@@ -1,9 +1,14 @@
 class UsersController < ApplicationController
   def show
-    conn = Faraday.new(url: "https://api.github.com")
 
-    response = conn.get("/user/repos?access_token=c35dc5837e32a18a135d76dd25c5da81e06785ce")
-    @json = JSON.parse(response.body, symbolize_names: true)[1..5]
+    # conn = Faraday.new(url: "https://api.github.com")
+
+    # response = conn.get("/user/repos?access_token=#{ENV["Github_token_jenny"]}")
+    # response_2 = conn.get("/user/following?access_token=#{ENV["Github_token_jenny"]}")
+    # response_3 = conn.get("/user/followers?access_token=#{ENV["Github_token_jenny"]}")
+    # @json = JSON.parse(response.body, symbolize_names: true)[1..5]
+    # @json_2 = JSON.parse(response_2.body, symbolize_names: true)
+    # @json_3 = JSON.parse(response_3.body, symbolize_names: true)
   end
 
   def new
