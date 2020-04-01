@@ -1,7 +1,7 @@
 class GithubService
 
-  def github_info(info, token)
-    get_json("/user/#{info}?access_token=#{token}")
+  def github_info(path, token)
+    get_json("/user/#{path}?access_token=#{token}")
   end
 
 private

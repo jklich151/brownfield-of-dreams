@@ -9,17 +9,17 @@ class User < ApplicationRecord
   has_secure_password
 
   def repos
-    repo = GithubService.new
-    repo.github_info("repos", github_token)
+    get_repos = GithubSearch.new("repos", github_token)
+    get_repos.repos
+  end
+  
+  def following
+    get_following = GithubSearch.new("following", github_token)
+    get_following.following
   end
 
   def followers
-    follower = GithubService.new
-    follower.github_info("followers", github_token)
-  end
-
-  def following
-    following = GithubService.new
-    following.github_info("following", github_token)
+    get_followers = GithubSearch.new("followers", github_token)
+    get_followers.followers
   end
 end
