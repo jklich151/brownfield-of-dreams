@@ -5,7 +5,7 @@ describe 'A registered user' do
     json_response = File.read('spec/fixtures/user_github_info.json')
     stub_request(:get, "https://api.github.com/user/repos?access_token=#{ENV["Github_token_jenny"]}").
         to_return(status: 200, body: json_response)
-
+    
     json_response = File.read('spec/fixtures/user_following.json')
     stub_request(:get, "https://api.github.com/user/following?access_token=#{ENV["Github_token_jenny"]}").
         to_return(status: 200, body: json_response)
@@ -44,7 +44,7 @@ describe 'A registered user' do
     end
   end
   
-  xit "user without token cannot see github section" do
+  it "user without token cannot see github section" do
     user = User.create(email: "jennyklich@gmail.com",
                       first_name: "Jenny",
                       last_name: "Klich",

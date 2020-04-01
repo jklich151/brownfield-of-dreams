@@ -8,24 +8,30 @@
     <li> <%= current_user.first_name  %> <%= current_user.last_name %> </li>
     <li> <%= current_user.email%> </li>
   </ul>
-  <h3>Github</h3>
-  <section class= "Github" >
-    <% current_user.repos.each do |repo| %>
-    <%= link_to repo.name, repo.url %>
-    <% end %>
-    <h4>Following</h4>
-    <section class= "Following" >
-      <% current_user.following.map do |following| %>
-      <%= link_to following.name, following.url  %>
+  
+  <% if current_user.github_token %>
+    <h3>Github</h3>
+    <section class= "Github" >
+      <% current_user.repos.each do |repo| %>
+      <%= link_to repo.name, repo.url %>
       <% end %>
+      
+      <h4>Following</h4>
+      <section class= "Following" >
+        <% current_user.following.map do |following| %>
+        <%= link_to following.name, following.url  %>
+        <% end %>
+      </section>
+      
+      <h4>Followers</h4>
+      <section class= "Followers" >
+        <% current_user.followers.map do |follower| %>
+        <%= link_to follower.name, follower.url  %>
+        <% end %>
+      </section>
     </section>
-    <h4>Followers</h4>
-    <section class= "Followers" >
-      <% current_user.followers.map do |follower| %>
-      <%= link_to follower.name, follower.url  %>
-      <% end %>
-    </section>
-  </section>
+  <% end %>
+  
   <section>
     <h1>Bookmarked Segments</h1>
   </section>
