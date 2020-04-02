@@ -7,7 +7,9 @@
     <div class="tutorial">
       <img class="thumbnail col md-col-3" src= <%="#{tutorial.thumbnail}" %> >
       <div class="tutorial-description col md-col-9">
-        <h4 class="tutorial-title-home"><%= link_to tutorial.title, tutorial_path(tutorial), class: "title-link" %> </h4>
+        <% if current_user != nil && tutorial.classroom == true || tutorial.classroom == false %>
+          <h4 class="tutorial-title-home"><%= link_to tutorial.title, tutorial_path(tutorial), class: "title-link" %> </h4>
+        <% end %>
         <p class="description"><%= tutorial.description %></p> <br>
       </div>
     </div> <br>

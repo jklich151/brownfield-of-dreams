@@ -29,6 +29,5 @@ describe 'A registered user' do
     click_on 'Connect to Github'
 
     expect(user.github_token).to eq(ENV["TEST_KEY"])
-    save_and_open_page
   end
 end
