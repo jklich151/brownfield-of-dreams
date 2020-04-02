@@ -1,0 +1,30 @@
+Style/FrozenStringLiteralComment:
+  Enabled: false
+Style/Documentation:
+  Enabled: false
+Style/ClassAndModuleChildren:
+  Enabled: false
+Style/ConditionalAssignment:
+  Enabled: false
+Metrics/LineLength:
+  Enabled: false
+Metrics/BlockLength:
+  Enabled: false
+Lint/UselessAssignment:
+  Enabled: false
+Naming/VariableNumber:
+  Enabled: false
+Style/MixinUsage:
+  Enabled: false
+Metrics/AbcSize:
+  Enabled: false
+Naming/MemoizedInstanceVariableName:
+  Enabled: false
+Metrics/MethodLength:
+  Enabled: false
+Metrics/CyclomaticComplexity:
+  Enabled: false
+Metrics/PerceivedComplexity:
+  Enabled: false
+Lint/ShadowingOuterLocalVariable:
+  Enabled: false
