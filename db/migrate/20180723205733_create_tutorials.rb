@@ -4,7 +4,7 @@ class CreateTutorials < ActiveRecord::Migration[5.2]
       t.string :title
       t.text :description
       t.string :thumbnail
-      t.string :playlist_id
+      t.string :playlist_id, default: 0
       t.boolean :classroom, default: false
 
       t.timestamps
